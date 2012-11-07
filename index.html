@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Backbone</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -36,56 +36,232 @@
 			<div class="slides">
 
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>BACKBONE ON RAILS</h1>
+					<h3>Developing Backbone.js Applications with Rails</h3>
+					<br>
+					<br>
+					<br>
+					<br>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>
+							Created by <a href="https://github.com/lporras">Luis Porras</a> / <a href="http://twitter.com/lporras16">@lporras16</a>
+							</br>
+							<img src="https://twimg0-a.akamaihd.net/profile_images/681513627/perfil4.jpg" width="100px">
+						</small>
+						</br>
+						<small>Work at <strong><a href="http://continuum.cl/">Continuum</a></strong></small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+					<h2><a href="https://github.com/documentcloud/backbone"><img src="http://backbonejs.org/docs/images/backbone.png" style="background-color:white;"></a></h2>
+					<div>
+						Give your JS App some Backbone with <strong><a href="http://backbonejs.org/#Model">Models</a></strong>, <strong><a href="http://backbonejs.org/#View">Views</a></strong>, <strong><a href="http://backbonejs.org/#Collection">Collections</a></strong>, and <strong><a href="http://backbonejs.org/#Router">Routers</a></strong>
+					</div>
+					<div class="fragment">
+						<img src="http://codeconf.com/images/speakers/jeremy-ashkenas.png" width="100px">
+						<blockquote>Get yor truth out of the DOM</blockquote><small class="author"><a href="https://twitter.com/jashkenas">@jashkenas</a></small>
+					</div>
 				</section>
 
-				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
+						<h2><a href="https://github.com/documentcloud/backbone"><img src="http://backbonejs.org/docs/images/backbone.png" style="background-color:white;"></a></h2>
+						<h3>Simple small library</h3>
+						<br>
+						<strong class="fragment"><a href="http://backbonejs.org/backbone.js">Development Version (0.9.2)</a> 52kb, Full source, lots of comments</strong>
+						<br>
+						<br>
+						<strong class="fragment"><a href="http://backbonejs.org/backbone-min.js">Production Version (0.9.2)</a> 5.6kb, Packed and gzipped</strong>
+					</section>
+					<section>
+						<h3>Open Source</h3>
+						<a href="https://github.com/documentcloud/backbone"><img src="http://grab.by/hkFQ"></a>
+					</section>
+					<section>
+						<h3>Ligthweight</h3>
+						<br>
+						<ul>
+							<li>Easy to read in an hour or two</li>
+							<li>Focused functionality</li>
+							<li>No UI widgets</li>
+							<li>Template agnostic</li>
+							<li>Use the HTML & CSS you already know</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Dependencies</h3>
+						<br>
+						<h4>Hard dependency:</h4>
 						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#/2/1">down</a>.
+							<small>For RESTful persistance, and history support via <a href="http://backbonejs.org/#Router">Backbone.Router </a></small>
+							<a href="http://underscorejs.org/"><img src="http://grab.by/hkMM"></a>
 						</p>
-						<a href="#/2/1" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+						<h3>Dependencies</h3>
+						<div class="fragment">
+							<br>
+							<h4>DOM Manipulation:</h4>
+							<p>
+								Either <a href="http://jquery.com/">jQuery</a> or <a href="http://zeptojs.com/">Zepto</a>
+							</p>
+							<br>
+						</div>
+						<div class="fragment">
+							<br>
+							<h4>JSON Parse/Serialize (Just for Old Browsers)</h4>
+							<p><a href="https://github.com/douglascrockford/JSON-js">Json2.js</a></p>
+						</div>
 					</section>
 				</section>
+
+				<section>
+					<section>
+						<h3>Why should you consider using Backbone.js?</h3>
+						<br>
+						<p>You should consider it if You:</p>
+						<br>
+						<ul style="margin:0 auto;">
+							<li class="fragment">want something flexible</li>
+							<li class="fragment">need a persistence layer and RESTful sync</li>
+							<li class="fragment">want an event-driven communication</li>
+							<li class="fragment">think use templating and routing</li>
+							<li class="fragment">would like decisions about the architecture left up to you</li>
+						</ul>
+					</section>
+					<section>
+						<p>It’s main benefits, regardless of your target platform or device, include helping:</p>
+						<br>
+						<ul>
+							<li class="fragment">Organize the structure to your application</li>
+							<li class="fragment">Simplify server-side persistence</li>
+							<li class="fragment">Decouple the DOM from your page’s data</li>
+							<li class="fragment">Model data, views and routers in a succinct manner</li>
+							<li class="fragment">Provide DOM, model and collection synchronization</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-state="blackout">
+					<h2 style="position:fixed;top:35%;left:25%;">Getting Dirty: Models</h2>
+				</section>
+
+				<section>
+					<section>
+						<h2>Models</h2>
+						<br>
+						<div style="position:relative; height:500px">
+							<div style="height:500px;position:absolute;top:0;left:0%;width: 388px;">
+								<img src="http://25.media.tumblr.com/tumblr_lj8qw27oAQ1qch8n5o1_500.jpg"></div>
+							<div style="height:500px;position:absolute;top:0;left:50%;width:612px;">
+								<ul>
+									<li>Store data</li>
+									<li>Provide get/set accessors</li>
+									<li>Fire events when modified</li>
+									<li>Optionally make REST calls to a server for persistence</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+
+					<section>
+						<h2>Define a Class</h2>
+						<pre style=""><code contenteditable>
+//Define a Model Class
+var TodoItem = Backbone.Model.extend({
+  urlRoot: "/todos"
+  defaults:{
+    description: 'Empty todo...',
+    status:      'incomplete'
+  }
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Get/Set Attributes</h2>
+						<pre style=""><code contenteditable>
+//To Create a model instance
+var todoItem = new TodoItem({
+  description: "attend the lesson",
+  status: "incomplete",
+  id: 1
+});
+
+//To get an attribute
+todoItem.get('description');
+
+//To set and attribute
+todoItem.set({status: 'complete'});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Sync with API</h2>
+						<pre style=""><code contenteditable>
+var todoItem = new TodoItem();
+todoItem.set({description: 'Learn Backbone'});
+todoItem.save();
+//POST /todos 'todos#create'
+
+var todoItem = new TodoItem({id: 1})
+todoItem.fetch();
+//GET /todos/1 'todos#show'
+
+todoItem.set({description: "I should clean up my room"})
+todoItem.save();
+//PUT /todos/1 'todos#update'
+
+todoItem.destroy();
+//DELETE /todos/1 'todos#destroy'
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Built-in Events</h2>
+						<pre style=""><code contenteditable>
+//Bind model events
+todoItem.on('change', doThing);
+
+//Event triggerd on change
+todoItem.set({description: 'Pay all beers tonight'});
+
+//set without triggering event
+todoItem.set({description: 'I changed my mind, no beers tonight', {silent: true}});
+						</code></pre>
+						<img src="http://grab.by/hkSU" height="250px">
+					</section>
+
+				</section>
+
+				<section data-state="blackout">
+					<h2 style="position:fixed;top:35%;left:25%;">Next Round: Views</h2>
+				</section>
+
+				<section>
+
+					<section>
+						<h2>Views</h2>
+						<br>
+						<div style="position:relative; height:500px">
+							<div style="height:500px;position:absolute;top:0;left:0%;width: 388px;">
+								<img src="http://fashionfash.com/wp-content/uploads/2011/02/Adriana-Sklenarikova-Full-Tribal-Temporary-Back-Tattoo-Design-1024x768.jpg"></div>
+							<div style="height:500px;position:absolute;top:0;left:50%;width:612px;">
+								<ul>
+									<li>Display data & UI controls</li>
+									<li>Render data with a template</li>
+									<li>React to model changes</li>
+									<li>Act on use input</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+				</section>
+
+<!--
 
 				<section>
 					<h2>Point of View</h2>
@@ -333,7 +509,7 @@ function linkify( selector ) {
 				<section>
 					<h1>THE END</h1>
 					<h3>BY Hakim El Hattab / hakim.se</h3>
-				</section>
+				</section> -->
 
 			</div>
 
