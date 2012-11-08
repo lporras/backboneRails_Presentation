@@ -36,8 +36,8 @@
 			<div class="slides">
 
 				<section>
-					<h1>BACKBONE ON RAILS</h1>
-					<h3>Developing Backbone.js Applications with Rails</h3>
+					<h1>Backbone.js</h1>
+					<h3>Developing Backbone.js Applications</h3>
 					<br>
 					<br>
 					<br>
@@ -49,7 +49,7 @@
 							<img src="https://twimg0-a.akamaihd.net/profile_images/681513627/perfil4.jpg" width="100px">
 						</small>
 						</br>
-						<small><strong><a href="http://continuum.cl/">Continuum</a></strong></small>
+						<small>Rails developer at <strong><a href="http://continuum.cl/">Continuum</a></strong></small>
 					</p>
 				</section>
 
@@ -237,6 +237,102 @@ todoItem.set({description: 'I changed my mind, no beers tonight', {silent: true}
 				</section>
 
 				<section data-state="blackout">
+					<h2 style="position:fixed;top:35%;left:25%;">Collections</h2>
+				</section>
+
+				<section>
+					<section>
+						<h2>Backbone.Collection</h2>
+						<br>
+						<ul>
+							<li>Fecth model Data</li>
+							<li>Add to existing set</li>
+							<li>Remove from set</li>
+							<li>Your custom query code</li>
+							<li>Provide useful suite of underscore.js methods</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Define a Collection</h2>
+						<pre style=""><code contenteditable>
+var TodoList = Backbone.Collection.extend({
+	model: TodoItem
+});
+var todoList = new TodoList();
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Getting Data from Server</h2>
+						<img src="http://grab.by/hm4U">
+					</section>
+
+					<section>
+						<h2>Collection Events</h2>
+						<img src="http://grab.by/hm56">
+					</section>
+
+					<section>
+						<h2>Underscore Methods</h2>
+						<ul style="font-size:18px">
+				      <li><a href="http://documentcloud.github.com/underscore/#each">forEach (each)</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#map">map</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#reduce">reduce (foldl, inject)</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#reduceRight">reduceRight (foldr)</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#find">find (detect)</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#filter">filter (select)</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#reject">reject</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#all">every (all)</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#any">some (any)</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#include">include</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#invoke">invoke</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#max">max</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#min">min</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#sortBy">sortBy</a></li>
+				     </ul>
+				     <ul style="font-size:18px">
+				      <li><a href="http://documentcloud.github.com/underscore/#groupBy">groupBy</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#sortedIndex">sortedIndex</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#shuffle">shuffle</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#toArray">toArray</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#size">size</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#first">first</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#initial">initial</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#rest">rest</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#last">last</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#without">without</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#indexOf">indexOf</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#lastIndexOf">lastIndexOf</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#isEmpty">isEmpty</a></li>
+				      <li><a href="http://documentcloud.github.com/underscore/#chain">chain</a></li>
+    				</ul>
+					</section>
+
+					<section>
+						<h2>Ordered Collections</h2>
+						<pre style=""><code contenteditable>
+//If you define a comparator, it will be used to mantain the collection in sorted order
+var Chapter = Backbone.Model.extend({});
+var Chapters = new Backbone.Collection.extend({
+  model: Chapter,
+  comparator: function(chapter){
+    return chapter.get("page");
+  }
+});
+
+chapters.add(new Chapter({page: 9, title: "The End"}));
+chapters.add(new Chapter({page: 5, title: "The Middle"}));
+chapters.add(new Chapter({page: 1, title: "The Beginning"}));
+
+console.log(chapters.pluck('title'));
+//=> "The Beginning, The Middle, The End"
+						</code></pre>
+					</section>
+
+				</section>
+
+				<section data-state="blackout">
 					<h2 style="position:fixed;top:35%;left:25%;">Next Round: Views</h2>
 				</section>
 
@@ -259,6 +355,149 @@ todoItem.set({description: 'I changed my mind, no beers tonight', {silent: true}
 						</div>
 					</section>
 
+					<section>
+						<h2>Define View</h2>
+						<pre style=""><code contenteditable>
+var TodoView = Backbone.View.extend({
+  tagName   : 'article', //create tag article
+  id        : 'todo-view', //with id 'todo-item
+  className : 'todo', //and class todo
+
+  //template to use
+  template: _.template( $('#item-template').html() ),
+
+  //Listening to DOM events on the view
+  events: {
+    'change input': 'toggleStatus'
+  },
+
+  //Every Backbone Class has a constructor method
+  initialize: function(options){
+    this.model.on('change', this.render, this);
+    this.model.on('destroy', this.remove, this);
+  },
+
+  //override this method if the view generates a new DOM Object
+  render: function(){
+    return this.$el.html(this.template(this.model.toJSON()));
+    return this;
+  },
+
+  toggleStatus: function(){
+    this.model.toggleStatus();
+  },
+
+  //this method delete the view from the DOM
+  remove: function(){
+    ...
+  }
+});
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Template Engines</h2>
+						<img src="http://grab.by/hlZe">
+					</section>
+
+					<section>
+						<h2>DOM Events</h2>
+						<p>If you are using <strong>JQuery:</strong></p>
+						<img src="http://grab.by/hlZo">
+					</section>
+
+				</section>
+
+				<section data-state="blackout">
+					<h2 style="position:fixed;top:35%;left:25%;">Routing</h2>
+				</section>
+
+				<section>
+					<section>
+						<h2>Routes</h2>
+						<br>
+						<div style="position:relative; height:500px">
+							<div style="height:500px;position:absolute;top:0;left:0%;width: 388px;">
+								<img src="http://grab.by/hm7M">
+							</div>
+							<div style="height:500px;position:absolute;top:0;left:50%;width:612px;">
+								<ul>
+									<li>Map url fragments</li>
+									<li>Hash fragments</li>
+									<li>PushState (optional)</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h2>Define Routes</h2>
+						<img src="http://grab.by/hm8q">
+					</section>
+
+					<section>
+						<h2>more routes</h2>
+						<img src="http://grab.by/hm8y">
+					</section>
+					<section>
+						<h2>PushState</h2>
+						<img src="http://grab.by/hm8M">
+					</section>
+				</section>
+
+
+				<section>
+					<section data-state="blackout">
+						<h2 style="position:fixed;top:50%;left:65%;">Examples</h2>
+					</section>
+					<section>
+						<h3>DocumentCloud</h3>
+						<a href="http://www.documentcloud.org/public/#search/">
+			        <img width="550" height="453" alt="DocumentCloud Workspace" class="example_image" style="display: inline-block; " src="http://grab.by/hm0c">
+			      </a>
+					</section>
+					<section>
+						<h3>USA Today</h3>
+						<a href="http://www.usatoday.com/">
+			        <img width="550" height="453" alt="DocumentCloud Workspace" class="example_image" style="display: inline-block; " src="http://grab.by/hm0y">
+			      </a>
+					</section>
+					<section>
+						<h3>Foursquare</h3>
+						<a href="https://foursquare.com/">
+			        <img width="550" height="453" alt="Foursquare" class="example_image" style="display: inline-block; " src="http://grab.by/hm16">
+			      </a>
+					</section>
+					<section>
+						<p style="position:fixed;top:35%;left:25%;"><a href="http://backbonejs.org/#examples">and much more ...</a></p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Some Useful Resources</h2>
+					<br>
+					<ul>
+						<li>
+							<a href="http://addyosmani.github.com/backbone-fundamentals">Developing Backbone.js Applications</a>
+						</li>
+						<li>
+							<a href="https://github.com/documentcloud/backbone/wiki/Tutorials,-blog-posts-and-example-sites">Tutorials, blog posts and example sites</a>
+						</li>
+						<li>
+							<a href="http://www.codeschool.com/courses/anatomy-of-backbonejs">Code School Course - Anatomy of Backbonejs</a>
+						</li>
+						<li>
+							<a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-started-with-backbone-js/">Net Tuts + Getting Started with Backbonejs </a>
+						</li>
+						<li>
+							<a href="http://blog.apigee.com/detail/restful_api_design">Tech a Dog to REST:</a>
+						</li>
+					</ul>
+				</section>
+
+
+				<section data-state="blackout">
+					<h2 style="position:fixed;top:35%;left:25%;">Thanks</h2>
 				</section>
 
 <!--
