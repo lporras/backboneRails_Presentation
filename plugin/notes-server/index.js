@@ -9,8 +9,10 @@ var staticDir = express.static;
 
 io            = io.listen(app);
 
+port = process.env.PORT || 3000;
+
 var opts = {
-	port :      36139,
+	port :      port,
 	baseDir :   __dirname + '/../../'
 };
 
