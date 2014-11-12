@@ -23,6 +23,9 @@
       document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
     </script>
 
+    <script src="js/underscore-min.js"></script>
+    <script src="js/backbone-min.js"></script>
+
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
     <![endif]-->
@@ -64,87 +67,69 @@
           </div>
         </section>
 
+
         <section>
-          <section>
-            <h2><a href="https://github.com/documentcloud/backbone"><img src="http://backbonejs.org/docs/images/backbone.png" style="background-color:white;"></a></h2>
-            <h3>Simple small library</h3>
-            <br>
-            <strong class="fragment"><a href="http://backbonejs.org/backbone.js">Development Version (0.9.2)</a> 52kb, Full source, lots of comments</strong>
-            <br>
-            <br>
-            <strong class="fragment"><a href="http://backbonejs.org/backbone-min.js">Production Version (0.9.2)</a> 5.6kb, Packed and gzipped</strong>
-          </section>
-          <section>
-            <h3>Open Source</h3>
-            <a href="https://github.com/documentcloud/backbone"><img src="http://grab.by/hkFQ"></a>
-          </section>
-          <section>
-            <h3>Ligthweight</h3>
-            <br>
-            <ul>
-              <li>Easy to read in an hour or two</li>
-              <li>Focused on functionality</li>
-              <li>No UI widgets</li>
-              <li>Template agnostic</li>
-              <li>Use the HTML & CSS you already know</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Dependencies</h3>
+          <h2><a href="https://github.com/documentcloud/backbone"><img src="http://backbonejs.org/docs/images/backbone.png" style="background-color:white;"></a></h2>
+          <h3>Simple small library</h3>
+          <br>
+          <strong class="fragment"><a href="http://backbonejs.org/backbone.js">Development Version (1.1.2)</a> 60kb, Full source, lots of comments</strong>
+          <br>
+          <br>
+          <strong class="fragment"><a href="http://backbonejs.org/backbone-min.js">Production Version (1.1.2)</a> 6.5kb, Packed and gzipped</strong>
+        </section>
+        <section>
+          <h3>Open Source</h3>
+          <img src="images/backboneRepo.png" width="100%">
+        </section>
+        <section>
+          <h3>Ligthweight</h3>
+          <br>
+          <ul>
+            <li>Easy to read in an hour or two</li>
+            <li>Focused on functionality</li>
+            <li>No UI widgets</li>
+            <li>Template agnostic</li>
+            <li>Use the HTML & CSS you already know</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Dependencies</h3>
+
+          <div class="fragment">
             <br>
             <h4>Hard dependency:</h4>
             <p>
-              <small>For RESTful persistance, and history support via <a href="http://backbonejs.org/#Router">Backbone.Router </a></small>
-              <a href="http://underscorejs.org/"><img src="http://grab.by/hkMM"></a>
+              <a href="http://backbonejs.org/#Router">Underscore</a> or <a href="https://lodash.com/">Lo-Dash</a>
             </p>
-          </section>
-          <section>
-            <h3>Dependencies</h3>
-            <div class="fragment">
-              <br>
-              <h4>DOM Manipulation:</h4>
-              <p>
-                Either <a href="http://jquery.com/">jQuery</a> or <a href="http://zeptojs.com/">Zepto</a>
-              </p>
-              <br>
-            </div>
-            <div class="fragment">
-              <br>
-              <h4>JSON Parse/Serialize (Just for Old Browsers)</h4>
-              <p><a href="https://github.com/douglascrockford/JSON-js">Json2.js</a></p>
-            </div>
-          </section>
+          </div>
+
+          <div class="fragment">
+            <br>
+            <h4>DOM Manipulation:</h4>
+            <p>
+              Either <a href="http://jquery.com/">jQuery</a> or <a href="http://zeptojs.com/">Zepto</a>
+            </p>
+            <br>
+          </div>
+          <div class="fragment">
+            <br>
+            <h4>JSON Parse/Serialize (Just for Old Browsers)</h4>
+            <p><a href="https://github.com/douglascrockford/JSON-js">Json2.js</a></p>
+          </div>
         </section>
 
         <section>
-          <section>
-            <h3>Why should you consider using Backbone.js?</h3>
-            <br>
-            <p>You should consider it whether You:</p>
-            <br>
-            <ul style="margin:0 auto;">
-              <li class="fragment">want something flexible</li>
-              <li class="fragment">need a persistence layer and RESTful sync</li>
-              <li class="fragment">want an event-driven communication</li>
-              <li class="fragment">are thinking of using templating and routing</li>
-              <li class="fragment">would like decisions about the architecture left up to you</li>
-            </ul>
-          </section>
-          <section>
-            <p>Its main benefits, regardless of your target platform or device, include helping:</p>
-            <br>
-            <ul>
-              <li class="fragment">Organize the structure to your application</li>
-              <li class="fragment">Simplify server-side persistence</li>
-              <li class="fragment">Decouple the DOM from your page data</li>
-              <li class="fragment">Model data, views and routers in a succinct manner</li>
-              <li class="fragment">Provide DOM, model and collection synchronization</li>
-            </ul>
-          </section>
-        </section>
-
-        <section data-state="blackout">
-          <h2 style="position:fixed;top:35%;left:25%;">Getting Dirty: Models</h2>
+          <h3>Why should you consider using Backbone.js?</h3>
+          <br>
+          <p>You should consider it whether You:</p>
+          <br>
+          <ul style="margin:0 auto;">
+            <li class="fragment">want something flexible</li>
+            <li class="fragment">need a persistence layer and RESTful sync</li>
+            <li class="fragment">want an event-driven communication</li>
+            <li class="fragment">are thinking of using templating and routing</li>
+            <li class="fragment">would like decisions about the architecture left up to you</li>
+          </ul>
         </section>
 
         <section>
@@ -171,13 +156,22 @@
             <pre style=""><code contenteditable>
 //Define a Model Class
 var TodoItem = Backbone.Model.extend({
-  urlRoot: "/todos"
+  urlRoot: "/todos",
   defaults:{
     description: 'Empty todo...',
     status:      'incomplete'
   }
 });
             </code></pre>
+            <script>
+              var TodoItem = Backbone.Model.extend({
+                urlRoot: "/todos",
+                defaults: {
+                  description: 'Empty todo...',
+                  status:      'incomplete'
+                }
+              });
+            </script>
           </section>
 
           <section>
@@ -196,6 +190,20 @@ todoItem.get('description');
 //To set and attribute
 todoItem.set({status: 'complete'});
             </code></pre>
+            <script>
+//To Create a model instance
+var todoItem = new TodoItem({
+  description: "attend the lesson",
+  status: "incomplete",
+  id: 1
+});
+
+//To get an attribute
+todoItem.get('description');
+
+//To set and attribute
+todoItem.set({status: 'complete'});
+            </script>
           </section>
 
           <section>
@@ -231,7 +239,7 @@ todoItem.set({description: 'Pay all beers tonight'});
 //set without triggering event
 todoItem.set({description: 'I changed my mind, no beers tonight', {silent: true}});
             </code></pre>
-            <img src="http://grab.by/hkSU" height="250px">
+            <img src="images/model-events.png" height="250px">
           </section>
 
         </section>
@@ -265,12 +273,12 @@ var todoList = new TodoList();
 
           <section>
             <h2>Getting Data from Server</h2>
-            <img src="http://grab.by/hm4U">
+            <img src="images/collection-fetch.png">
           </section>
 
           <section>
             <h2>Collection Events</h2>
-            <img src="http://grab.by/hm56">
+            <img src="images/collection-events.png">
           </section>
 
           <section>
@@ -314,13 +322,14 @@ var todoList = new TodoList();
             <pre style=""><code contenteditable>
 //If you define a comparator, it will be used to mantain the collection in sorted order
 var Chapter = Backbone.Model.extend({});
-var Chapters = new Backbone.Collection.extend({
+var Chapters = Backbone.Collection.extend({
   model: Chapter,
   comparator: function(chapter){
     return chapter.get("page");
   }
 });
 
+var chapters = new Chapters([]);
 chapters.add(new Chapter({page: 9, title: "The End"}));
 chapters.add(new Chapter({page: 5, title: "The Middle"}));
 chapters.add(new Chapter({page: 1, title: "The Beginning"}));
@@ -328,6 +337,20 @@ chapters.add(new Chapter({page: 1, title: "The Beginning"}));
 console.log(chapters.pluck('title'));
 //=> "The Beginning, The Middle, The End"
             </code></pre>
+<script type="text/javascript">
+var Chapter = Backbone.Model.extend({});
+var Chapters = Backbone.Collection.extend({
+  model: Chapter,
+  comparator: function(chapter){
+    return chapter.get("page");
+  }
+});
+
+var chapters = new Chapters();
+chapters.add(new Chapter({page: 9, title: "The End"}));
+chapters.add(new Chapter({page: 5, title: "The Middle"}));
+chapters.add(new Chapter({page: 1, title: "The Beginning"}));
+</script>
           </section>
 
         </section>
@@ -349,7 +372,7 @@ console.log(chapters.pluck('title'));
                   <li>Display data & UI controls</li>
                   <li>Render data with a template</li>
                   <li>React to model changes</li>
-                  <li>Act on use input</li>
+                  <li>Act on user input</li>
                 </ul>
               </div>
             </div>
@@ -481,13 +504,16 @@ var TodoView = Backbone.View.extend({
               <a href="http://addyosmani.github.com/backbone-fundamentals">Developing Backbone.js Applications</a>
             </li>
             <li>
+              <a href="http://backboneplugins.com/">Building Backbone Plugins</a>
+            </li>
+            <li>
               <a href="https://github.com/documentcloud/backbone/wiki/Tutorials,-blog-posts-and-example-sites">Tutorials, blog posts and example sites</a>
             </li>
             <li>
               <a href="http://www.codeschool.com/courses/anatomy-of-backbonejs">Code School Course - Anatomy of Backbonejs</a>
             </li>
             <li>
-              <a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-started-with-backbone-js/">Net Tuts + Getting Started with Backbonejs </a>
+              <a href="https://www.codeschool.com/courses/anatomy-of-backbone-js-part-2">Code School Course - Anatomy of Backbonejs part 2</a>
             </li>
             <li>
               <a href="http://blog.apigee.com/detail/restful_api_design">Tech a Dog to REST:</a>
